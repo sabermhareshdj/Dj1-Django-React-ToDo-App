@@ -1,13 +1,9 @@
 import { useState } from "react"
 
 
-const Todos = () => {
+const Todos = ({todos,setTodos}) => {
     // Logic
-    const  [todos, setTodos] = useState([
-      {id:1, title: 'Python basicd', status:'DONE'},
-      {id:2, title: 'Study JS', status:'INPROGRESS'},
-    ])
-
+  
 
 
 

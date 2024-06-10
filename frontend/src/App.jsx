@@ -7,14 +7,20 @@ import Todos from './components/Todos'
 import CreateToDo from './components/CreateToDo'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const  [todos, setTodos] = useState([
+    {id:1, title: 'Python basicd', status:'DONE'},
+    {id:2, title: 'Study JS', status:'INPROGRESS'},
+  ])
+
+
 
   return (
     <div className='container'>
       <div className='row'>
         <div className='col-lg-7 mx-auto my-5'>
         <CreateToDo />
-        <Todos />
+        <Todos todos={todos} setTodos={setTodos}/>
 
 
         </div>

@@ -14,7 +14,7 @@ const CreateToDo = () => {
           </div>
           <div className="col-2">
             <select className="form-control">
-              <option value="DONE"> Donecd </option>
+              <option value="DONE"> Done </option>
               <option value="INPROGRESS"> InProgress </option>
             </select>
           </div>
