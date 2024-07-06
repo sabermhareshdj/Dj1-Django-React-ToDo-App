@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 
-const Todos = ({todos,setTodos,onUpdateTodo}) => {
+const Todos = ({todos,setTodos,UpdateTodo}) => {
     // Logic
   const handelToDoUpdate = (todo) => {
     const updatedStatus = todo.status == "DONE" ? "INPROGRESS" : "DONE"
@@ -9,14 +9,13 @@ const Todos = ({todos,setTodos,onUpdateTodo}) => {
     fetch(`http://127.0.0.1:8000/api/todo/${todo.id}/`,{
       method: "PUT",
       headers:{"Content-Type": "application/json"},
-    
-    body: JSON.stringify({title:todo.title , status: updatedStatus })
+      body: JSON.stringify({title:todo.title , status: updatedStatus })
   })
   .then(response => {
     return response.json()
   })
   .then(data => {
-    onUpdateTodo(data)
+  UpdateTodo(data)
   })
 }
   
@@ -32,7 +31,7 @@ const Todos = ({todos,setTodos,onUpdateTodo}) => {
         <li key={todo.id} className="list-group-item d-flex justify-content-between my-1 ">
               <span>{todo.title}</span>
               <button 
-              className={` btn btn-sm border ${todo.status == "DONE" ? "btn-success" : "btn-warning"}`}
+              className={`btn btn-sm border ${todo.status == "DONE" ? "btn-success" : "btn-warning"}`}
               onClick={() => handelToDoUpdate(todo)}
               >{todo.status}</button>
         </li>
