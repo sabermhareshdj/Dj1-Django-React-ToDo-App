@@ -16,7 +16,10 @@ function App() {
     .then(data => setTodos(data))
   })
 
-  
+  const onUpdateTodo = (onUpdateTodo) => {
+    setTodos(todos.map(todo => (todo.id == onUpdateTodo.id ? onUpdateTodo : todo)))
+     
+  }
 
 
 
@@ -25,7 +28,7 @@ function App() {
       <div className='row'>
         <div className='col-lg-7 mx-auto my-5'>
         <CreateToDo />
-        <Todos todos={todos} setTodos={setTodos}/>
+        <Todos todos={todos} setTodos={setTodos} onUpdateTodo={onUpdateTodo}/>
 
 
         </div>
