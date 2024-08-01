@@ -1,7 +1,7 @@
+"use client";
 import { useState } from "react";
 
-const Todos = ({ todos, setTodos, onUpdateTodo }) => {
-  // Logic
+const Todos = ({ todos = [], setTodos, onUpdateTodo }) => {
   const handelToDoUpdate = (todo) => {
     const updatedStatus = todo.status === "DONE" ? "INPROGRESS" : "DONE";
 
@@ -16,7 +16,6 @@ const Todos = ({ todos, setTodos, onUpdateTodo }) => {
       });
   };
 
-  // UI + Logic
   return (
     <div className="container mt-5">
       <ul className="list-group">

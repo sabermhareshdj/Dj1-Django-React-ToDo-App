@@ -29,7 +29,7 @@ function App() {
       <div className='row'>
         <div className='col-lg-7 mx-auto my-5'>
           <CreateToDo onCreateToDo={onCreateToDo} />
-          <Todos todos={todos} setTodos={setTodos} UpdateTodo={onUpdateTodo} />
+          <Todos todos={todos} setTodos={setTodos} onUpdateTodo={onUpdateTodo} />
         </div>
       </div>
     </div>
