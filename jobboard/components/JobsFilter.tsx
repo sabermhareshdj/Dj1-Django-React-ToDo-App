@@ -22,7 +22,7 @@ function JobsFilter() {
 
   return (
     <div className="w-full lg:w-1/4">
-      <div className="p-6 shadow-md rounded-lg">
+      <div className="p-6 py-0 shadow-md rounded-lg">
         <h4 className="text-lg mb-4 font-semibold"> Filters </h4>
         <form>
           <Input type="number" placeholder="Min Salary" className="w-full mb-2" />
